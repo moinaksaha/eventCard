@@ -1,0 +1,22 @@
+.cardHeading{
+    padding: 10px;
+}
+
+.cardHeading .cardDate{
+    float: right;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.cardHeading .cardTitle{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cardHeading .cardLocation{
+    font-size: 11px;
+}
+
+.cardHeading .cardLocation .cardLocationText{
+    margin-left: 5px;
+}

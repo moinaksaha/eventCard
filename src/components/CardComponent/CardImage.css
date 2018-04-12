@@ -1,0 +1,9 @@
+.cardImageWrapper{
+    margin-top: 20px;
+}
+
+.cardImageDiv{
+    width: 200px;
+    height: 300px;
+    border-radius: 8px;
+}

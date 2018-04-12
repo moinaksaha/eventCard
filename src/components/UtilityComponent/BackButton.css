@@ -1,0 +1,9 @@
+.backButtonWrapper{
+    padding: 10px;
+    display: inline-block;
+}
+.backButtonWrapper .backButtonText{
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 5px;
+}

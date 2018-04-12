@@ -1,5 +1,15 @@
 @import '../../theme/colors.scss';
 
 .mainWrapper{
-	background: red;
+	/* background: red; */
+}
+.bottomBarWrapper{
+	position: fixed;
+	bottom: 0;
+	padding-top: 20px;
+    padding-bottom: 20px;
+}
+.topBar{
+	padding-bottom: 15px;
+	padding-top: 15px;
 }

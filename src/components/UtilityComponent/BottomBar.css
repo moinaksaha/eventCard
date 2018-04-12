@@ -1,0 +1,17 @@
+
+.bottomButtonHolder .leftHamburger{
+    padding: 10px;
+    font-size: 16px;
+}
+
+.bottomButtonHolder .createButton{
+    padding: 10px;
+    font-size: 14px;
+}
+
+.bottomButtonHolder .createButton .createText{
+    margin-left: 5px;
+    font-size: 16px;
+    position: relative;
+    top: 1px;
+}

@@ -13,10 +13,15 @@ import React, { Component } from 'react';
 
 import { Row, Col } from 'react-bootstrap';
 
+import sampleData from './SampleData'
+
 // Import style from Home.css file
 import styles from './Home.css';
 
-import HomeComponent from '../../components/Home/HomeComponent'
+import IndividualCard from '../../components/IndividualCard/IndividualCard';
+
+import BackButton from '../../components/UtilityComponent/BackButton';
+import BottomBar from '../../components/UtilityComponent/BottomBar';
 
 export default class Home extends Component {
   constructor(props) {
@@ -33,12 +38,31 @@ export default class Home extends Component {
 
       <Row className={`${styles.mainWrapper}`}>
 
+        <Col xs={12} className={`${styles.topBar}`}>
+
+          <BackButton />
+
+        </Col>
+
         <Col xs={12}>
 
-          Moinak Testing here
+          {sampleData.data.map((object, i) => {
 
-          <HomeComponent message={`Hello World!`} />
+            return(
+
+              <IndividualCard key={object.id}
+                              cardData={object}/>
+
+            )
+
+          })}
                     
+        </Col>
+
+        <Col xs={12} className={`${styles.bottomBarWrapper}`}>
+
+          <BottomBar />
+
         </Col>
 
       </Row>
