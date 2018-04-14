@@ -1,5 +1,6 @@
 .cardHeading{
     padding: 10px;
+    transition: all 0.3s linear;
 }
 
 .cardHeading .cardDate{

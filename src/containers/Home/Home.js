@@ -11,7 +11,7 @@
 
 import React, { Component } from 'react';
 
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Glyphicon } from 'react-bootstrap';
 
 import sampleData from './SampleData'
 
@@ -19,6 +19,7 @@ import sampleData from './SampleData'
 import styles from './Home.css';
 
 import IndividualCard from '../../components/IndividualCard/IndividualCard';
+import CardWrapper from '../../components/IndividualCard/CardWrapper';
 
 import BackButton from '../../components/UtilityComponent/BackButton';
 import BottomBar from '../../components/UtilityComponent/BottomBar';
@@ -26,8 +27,45 @@ import BottomBar from '../../components/UtilityComponent/BottomBar';
 export default class Home extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      currentCardIndex: 0,
+      allCardData: sampleData.data,
+      currentCardState: "carousel" // "cardDetail"
+    }
   }
 
+  componentDidMount = () => {
+    // setTimeout(() => {
+    //   this.nextCard();
+    //   setTimeout(() => {
+    //     this.nextCard();
+    //     setTimeout(() => {
+    //       this.prevCard();
+    //       setTimeout(() => {
+    //         this.prevCard();
+    //       }, 2000)
+    //     }, 2000)
+    //   }, 2000)
+    // }, 2000)
+  }
+
+  prevCard = () => {
+    this.setState((prevState) => ({
+      currentCardIndex: (prevState.currentCardIndex>0)? prevState.currentCardIndex - 1 : 0
+    }))
+  }
+
+  nextCard = () => {
+    this.setState((prevState, props) => ({
+      currentCardIndex: (prevState.currentCardIndex<prevState.allCardData.length-1) ? prevState.currentCardIndex + 1 : prevState.currentCardIndex
+    }));
+  }
+
+  toggleCardState = () => {
+    this.setState((prevState) => ({
+      currentCardState: (prevState.currentCardState === "carousel") ? "cardDetail" : "carousel"
+    }))
+  }
 
   /*
 		Function to handle error while form validation
@@ -46,18 +84,34 @@ export default class Home extends Component {
 
         <Col xs={12}>
 
-          {sampleData.data.map((object, i) => {
-
-            return(
-
-              <IndividualCard key={object.id}
-                              cardData={object}/>
-
-            )
-
-          })}
+          <CardWrapper allCardData={this.state.allCardData}
+                       currentCardIndex={this.state.currentCardIndex}
+                       toggleCardState={this.toggleCardState}
+                       currentCardState={this.state.currentCardState}
+                       nextCard={this.nextCard}
+                       prevCard={this.prevCard} />
                     
         </Col>
+
+
+
+        {/* ONLY FOR TESTING PURPOSE */}
+
+        {/* <Col xs={12} className={`${styles.navigationTest}`}>
+
+          <div className={`pull-left ${styles.prev}`}
+               onClick={this.prevCard}> 
+            <Glyphicon glyph="chevron-left"/>
+          </div>
+
+          <div className={`pull-right ${styles.next}`}
+               onClick={this.nextCard}> 
+            <Glyphicon glyph="chevron-right"/>
+          </div>
+
+        </Col> */}
+
+        {/* ONLY FOR TESTING PURPOSE */}
 
         <Col xs={12} className={`${styles.bottomBarWrapper}`}>
 

@@ -12,26 +12,36 @@ export default class CardHeading extends Component{
 
 	render = () => {
 
-		const { cardData } = this.props;
+		const { cardData, position } = this.props;
 
-		return (
+		// if(position === 0){
 
-			<div className={`${styles.cardHeading}`}>
+			return (
 
-				<div className={`${styles.cardDate}`}>{cardData.date}</div>
+				<div className={`${styles.cardHeading}`}>
+	
+					<div className={`${styles.cardDate}`}>{cardData[0].date}</div>
+	
+					<div className={`${styles.cardTitle}`}>{cardData[0].title}</div>
+	
+					<div className={`${styles.cardLocation}`}>
 
-                <div className={`${styles.cardTitle}`}>{cardData.title}</div>
+						<span><Glyphicon glyph="map-marker" /></span>
 
-				<div className={`${styles.cardLocation}`}>
-					<span><Glyphicon glyph="map-marker" /></span>
-					<span className={`${styles.cardLocationText}`}>{cardData.location}</span>
+						<span className={`${styles.cardLocationText}`}>{cardData[0].location}</span>
+						
+					</div>
+	
 				</div>
+	
+			);
 
+		// }else{
 
+		// 	return null;
 
-            </div>
-
-		);
+		// }
+		
 
 	}
 	

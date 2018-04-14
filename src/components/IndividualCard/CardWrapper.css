@@ -1,0 +1,191 @@
+.cardImageWrapper{
+    padding: 10px;
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+}
+
+
+/* .appear {
+    opacity: 0.2;
+	transform:   translate(100px,0);
+	transform: translate3d(100px,0,0);
+}
+  
+.appearActive {
+    opacity: 1;
+	transform:   translate(0,0,0);
+	transform: translate3d(0,0,0);
+    transition-property: transform, opacity;
+	transition-duration: 300ms;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease;
+} */
+
+.enter {
+    opacity: 0;
+    transform:   translate(-100px,0);
+    transform: translate3d(-100px,0,0);
+}
+  
+.enterActive {
+    opacity: 1;
+	transform:   translate(0,0);
+	transform: translate3d(0,0,0);
+	transition-property: all;
+	transition-duration: 300ms;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease;
+}
+
+.leave {
+    opacity: 1;
+	transform:   translate(0,0);
+	transform: translate3d(0,0,0);
+    transition-property: all;
+	transition-duration: 300ms;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease;
+}
+
+.leaveActive {
+    opacity: 0;
+	transform:   translate(-100px,0);
+	transform: translate3d(-100px,0,0);
+	/* transform: scale(0.8); */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* HEADING */
+
+/* .enterHeading {
+    opacity: 0;
+    transform:   translate(0,-100px);
+    transform: translate3d(0,-100px,0);
+}
+  
+.enterActiveHeading {
+    opacity: 1;
+	transition: opacity 1s ease;
+	transform:   translate(0,0);
+	transform: translate3d(0,0,0);
+	transition-property: transform, opacity;
+	transition-duration: 300ms;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+}
+
+.leaveHeading {
+    opacity: 0;
+	transform:   translate(0,0);
+	transform: translate3d(0,0,0);
+    transition-property: transform, opacity;
+	transition-duration: 300ms;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+}
+
+.leaveActiveHeading {
+    opacity: 0;
+	transform:   translate(0,-100px);
+	transform: translate3d(0,-100px,0);
+} */
+
+
+
+
+/* .appear {
+    opacity: 0;
+	transform:   translate(250px,0);
+	transform: translate3d(250px,0,0);
+    
+  }
+  
+  .appearActive {
+    opacity: 1;
+	transform:   translate(0,0,0);
+	transform: translate3d(0,0,0);
+    transition-property: transform, opacity;
+	transition-duration: 300ms;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+    
+  } */
+
+
+
+
+
+/* 
+.enterHeadingNew {
+    opacity: 0;
+    transform:   translate(0,-100px);
+    transform: translate3d(0,-100px,0);
+}
+  
+.enterActiveHeadingNew {
+    opacity: 1;
+	transition: opacity 1s ease;
+	transform:   translate(0,0);
+	transform: translate3d(0,0,0);
+	transition-property: transform, opacity;
+	transition-duration: 300ms;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+}
+
+.leaveHeadingNew {
+    opacity: 0;
+	transform:   translate(0,0);
+	transform: translate3d(0,0,0);
+    transition-property: transform, opacity;
+	transition-duration: 300ms;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+}
+
+.leaveActiveHeadingNew {
+    opacity: 0;
+	transform:   translate(0,-100px);
+	transform: translate3d(0,-100px,0);
+}
+
+.appearHeadingNew {
+    opacity: 0;
+    transform:   translate(0,-100px);
+    transform: translate3d(0,-100px,0);
+    
+  }
+  
+  .appearActiveHeadingNew {
+    opacity: 1;
+	transition: opacity 1s ease;
+	transform:   translate(0,0);
+	transform: translate3d(0,0,0);
+	transition-property: transform, opacity;
+	transition-duration: 300ms;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+    
+  }  */
