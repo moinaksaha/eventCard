@@ -61,13 +61,14 @@ export default class CardWrapper extends Component{
 
 	render = () => {
 
-        const { toggleCardState, currentCardState } = this.props;
+        const { toggleCardState, currentCardState, currentCardIndex } = this.props;
 
         // const { allCardData, currentCardIndex } = this.props;
 
         // console.log(styles)
 
-        const currentCardData = this.state.displayData.slice(0, 1);
+        // const currentCardData = this.state.displayData.slice(0, 1);
+        const currentCardData = this.state.allCardData.slice(currentCardIndex, currentCardIndex+1);
 
         console.log(currentCardData)
 
@@ -162,9 +163,9 @@ export default class CardWrapper extends Component{
     
                     </Swipeable>
     
-                    <CardBottomPart cardData={currentCardData}
+                    {/* <CardBottomPart cardData={currentCardData}
                                     currentCardState={currentCardState}
-                                    toggleCardState={toggleCardState}/>
+                                    toggleCardState={toggleCardState}/> */}
     
                 </div>
     

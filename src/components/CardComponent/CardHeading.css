@@ -1,23 +1,30 @@
 .cardHeading{
     padding: 10px;
-    transition: all 0.3s linear;
 }
 
 .cardHeading .cardDate{
-    float: right;
+    /* float: right; */
     font-size: 12px;
-    margin-top: 10px;
+    margin-top: 4px;
+    margin-left: 2px;
 }
 
 .cardHeading .cardTitle{
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
 }
 
 .cardHeading .cardLocation{
     font-size: 11px;
+    margin-top: 6px;
 }
 
 .cardHeading .cardLocation .cardLocationText{
     margin-left: 5px;
+}
+
+.notForCardDetail{
+    position: absolute;
+    right: 25px;
+    top: 16px;
 }

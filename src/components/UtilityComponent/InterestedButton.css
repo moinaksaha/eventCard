@@ -1,0 +1,18 @@
+.interestedButton{
+    width: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    background: #565656;
+    color: white;
+    border: 0;
+    transition: 0.5s;
+    border-radius: 4px;
+    text-align: center;
+    padding: 8px 20px;
+}
+.interestedButton:focus, .interestedButton:hover{
+    outline: none;
+}
+.interestedButton.isGoing{
+    background: green;
+}

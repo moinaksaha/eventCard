@@ -20,6 +20,7 @@ import styles from './Home.css';
 
 import IndividualCard from '../../components/IndividualCard/IndividualCard';
 import CardWrapper from '../../components/IndividualCard/CardWrapper';
+import CardBottomPart from '../../components/CardComponent/CardBottomPart'
 
 import BackButton from '../../components/UtilityComponent/BackButton';
 import BottomBar from '../../components/UtilityComponent/BottomBar';
@@ -72,6 +73,8 @@ export default class Home extends Component {
 	*/
   render() {
 
+    const currentCardData = this.state.allCardData.slice(this.state.currentCardIndex, this.state.currentCardIndex+1);
+
     return (
 
       <Row className={`${styles.mainWrapper}`}>
@@ -93,11 +96,15 @@ export default class Home extends Component {
                     
         </Col>
 
+        <CardBottomPart cardData={currentCardData}
+                        currentCardState={this.state.currentCardState}
+                        toggleCardState={this.toggleCardState}/>
+
 
 
         {/* ONLY FOR TESTING PURPOSE */}
 
-        {/* <Col xs={12} className={`${styles.navigationTest}`}>
+        <Col xs={12} className={`${styles.navigationTest}`}>
 
           <div className={`pull-left ${styles.prev}`}
                onClick={this.prevCard}> 
@@ -109,7 +116,7 @@ export default class Home extends Component {
             <Glyphicon glyph="chevron-right"/>
           </div>
 
-        </Col> */}
+        </Col>
 
         {/* ONLY FOR TESTING PURPOSE */}
 

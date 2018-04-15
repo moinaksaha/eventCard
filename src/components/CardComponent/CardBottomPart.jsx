@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 
+import { Glyphicon } from 'react-bootstrap';
+
 import Swipeable from 'react-swipeable';
+
+import CardHeading from './CardHeading';
+
+import BackButton from '../UtilityComponent/BackButton';
+
+import InterestedButton from '../UtilityComponent/InterestedButton';
 
 import styles from './CardBottomPart.css';
 
@@ -30,9 +38,9 @@ export default class CardBottomPart extends Component{
 
 		const cardClass = (currentCardState && currentCardState === "cardDetail") ?
 
-							`text-center ${styles.cardDetailWrapper} ${styles.visible}` : 
+							`${styles.cardDetailWrapper} ${styles.visible}` : 
 
-							`text-center ${styles.cardDetailWrapper}`;
+							`${styles.cardDetailWrapper}`;
 
 
 		// if(currentCardState === "cardDetail"){
@@ -44,13 +52,47 @@ export default class CardBottomPart extends Component{
 					<Swipeable onSwiped={this.swiped}>
 
 						<div className={`${styles.topBlankPart}`}
-							onClick={this.hideCardDetail}></div>
+							onClick={this.hideCardDetail}>
+							
+							{currentCardState && currentCardState === "cardDetail" && 
+						
+								<BackButton />
+
+							}
+							
+						</div>
 
 					</Swipeable>
 	
 					<div className={`${styles.cardContentHolder}`}>
-	
-						{cardData[0].text}
+
+						<div className={`${styles.cardDetailTopPart}`}>
+
+							<CardHeading cardData={cardData}
+										 forCardDetail={true}/>
+
+							<div className={`${styles.interestedButtonHolder}`}>
+
+								<InterestedButton />
+
+							</div>
+							
+
+						</div>
+
+						<div className={`${styles.calendarSyncDiv}`}>
+
+							<div>Add to calendar</div>
+
+							<div className={`pull-right`}>
+
+								<span className={`${styles.knowMoreText}`}>Know More</span>
+
+								<span><Glyphicon glyph="arrow-right" /></span>
+
+							</div>
+
+						</div>
 
 					</div>
 	

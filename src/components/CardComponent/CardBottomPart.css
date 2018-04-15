@@ -3,7 +3,7 @@
 
 
 .cardDetailWrapper{
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     height: 0;
@@ -20,4 +20,30 @@
 }
 .cardDetailWrapper .cardContentHolder{
     background: $colorWhite;
+    height: 100%;
+}
+.cardDetailTopPart{
+    padding: 10px;
+    border-bottom: 1px solid #e6e6e6;
+    position: relative;
+}
+.calendarSyncDiv{
+    padding: 20px;
+    font-weight: 500;
+}
+.calendarSyncDiv > div{
+    display: inline-block;
+}
+.calendarSyncDiv .knowMoreText{
+    margin-right: 5px;
+    position: relative;
+    top: -1px;
+    color: aquamarine;
+}
+.interestedButtonHolder{
+    display: inline-block;
+    float: right;
+    position: absolute;
+    right: 35px;
+    top: 35px;
 }
