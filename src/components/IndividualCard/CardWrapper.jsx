@@ -80,7 +80,7 @@ export default class CardWrapper extends Component{
 
                 <div className={``}>
 
-                    {/* <CSSTransitionGroup
+                    <CSSTransitionGroup
                         transitionName={{
                             enter: `${styles.enterHeadingNew}`,
                             enterActive: `${styles.enterActiveHeadingNew}`,
@@ -90,11 +90,11 @@ export default class CardWrapper extends Component{
                             appearActive: `${styles.appearActiveHeadingNew}`
                           } }
                           transitionLeaveTimeout={300}
-                          transitionEnterTimeout={300}> */}
+                          transitionEnterTimeout={300}>
 
-                            <CardHeading cardData={currentCardData} key={currentCardData.id}/>
+                            <CardHeading cardData={currentCardData} key={currentCardData}/>
                         
-                        {/* </CSSTransitionGroup> */}
+                    </CSSTransitionGroup>
 
                     {/* <CSSTransitionGroup transitionName={{
                                                 enter: `${styles.enterHeading}`,

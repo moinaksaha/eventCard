@@ -142,8 +142,8 @@
 
 
 
-/* 
-.enterHeadingNew {
+
+/* .enterHeadingNew {
     opacity: 0;
     transform:   translate(0,-100px);
     transform: translate3d(0,-100px,0);
@@ -157,12 +157,12 @@
 	transition-property: transform, opacity;
 	transition-duration: 300ms;
 	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
-}
+} */
 
 .leaveHeadingNew {
     opacity: 0;
-	transform:   translate(0,0);
-	transform: translate3d(0,0,0);
+	transform:   translate(0,-100px);
+	transform: translate3d(0,-100px,0);
     transition-property: transform, opacity;
 	transition-duration: 300ms;
 	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
@@ -170,18 +170,17 @@
 
 .leaveActiveHeadingNew {
     opacity: 0;
-	transform:   translate(0,-100px);
-	transform: translate3d(0,-100px,0);
+	transform:   translate(0,0);
+	transform: translate3d(0,0,0);
 }
 
-.appearHeadingNew {
+/* .appearHeadingNew {
     opacity: 0;
     transform:   translate(0,-100px);
     transform: translate3d(0,-100px,0);
-    
-  }
+}
   
-  .appearActiveHeadingNew {
+.appearActiveHeadingNew {
     opacity: 1;
 	transition: opacity 1s ease;
 	transform:   translate(0,0);
@@ -189,5 +188,4 @@
 	transition-property: transform, opacity;
 	transition-duration: 300ms;
 	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
-    
-  }  */
+}  */
