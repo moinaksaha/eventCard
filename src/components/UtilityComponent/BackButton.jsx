@@ -12,21 +12,19 @@ export default class BackButton extends Component{
 
 	render = () => {
 
-		// const { message } = this.props;
+		const { text, isCardDetail } = this.props;
 
-		// const { buttonAttribute } = this.props;
-
-		const buttonAttribute = {
-			text: "Event"
-		}
+		const backButtonWrapperClassName = (!isCardDetail) ?
+											`${styles.backButtonWrapper}`:
+											`${styles.backButtonWrapper} ${styles.shadow}`;
 
 		return (
 
-			<div className={`${styles.backButtonWrapper}`}>
+			<div className={backButtonWrapperClassName}>
 
-                <span><Glyphicon glyph="menu-left" /></span>
+                <Glyphicon glyph="menu-left" />
 
-				<span className={`${styles.backButtonText}`}>Event</span>
+				<span className={`${styles.backButtonText}`}>{text}</span>
 
             </div>
 

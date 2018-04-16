@@ -2,29 +2,27 @@
     padding: 10px;
 }
 
-.cardHeading .cardDate{
-    /* float: right; */
+.cardHeading .cardDateNew{
     font-size: 12px;
-    margin-top: 4px;
-    margin-left: 2px;
+    margin-top: 10px;
 }
-
-.cardHeading .cardTitle{
+.cardHeading.isNotCardDetail .cardDateNew{
+    float: right;
+}
+.cardHeading .titleLocationWrapper{
+    display: inline-block;
+}
+.cardHeading .titleLocationWrapper .cardDateNew{
+    float: none;
+}
+.cardHeading .titleLocationWrapper .cardTitle{
     font-size: 22px;
     font-weight: 600;
 }
-
-.cardHeading .cardLocation{
+.cardHeading .titleLocationWrapper .cardLocation{
     font-size: 11px;
     margin-top: 6px;
 }
-
-.cardHeading .cardLocation .cardLocationText{
+.cardHeading .titleLocationWrapper .cardLocation .cardLocationText{
     margin-left: 5px;
-}
-
-.notForCardDetail{
-    position: absolute;
-    right: 25px;
-    top: 16px;
 }

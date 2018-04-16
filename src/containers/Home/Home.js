@@ -18,7 +18,6 @@ import sampleData from './SampleData'
 // Import style from Home.css file
 import styles from './Home.css';
 
-import IndividualCard from '../../components/IndividualCard/IndividualCard';
 import CardWrapper from '../../components/IndividualCard/CardWrapper';
 import CardBottomPart from '../../components/CardComponent/CardBottomPart'
 
@@ -31,33 +30,21 @@ export default class Home extends Component {
     this.state = {
       currentCardIndex: 0,
       allCardData: sampleData.data,
-      currentCardState: "carousel" // "cardDetail"
+      currentCardState: "carousel", // "cardDetail"
+      currentSwipeDirection: "left"
     }
-  }
-
-  componentDidMount = () => {
-    // setTimeout(() => {
-    //   this.nextCard();
-    //   setTimeout(() => {
-    //     this.nextCard();
-    //     setTimeout(() => {
-    //       this.prevCard();
-    //       setTimeout(() => {
-    //         this.prevCard();
-    //       }, 2000)
-    //     }, 2000)
-    //   }, 2000)
-    // }, 2000)
   }
 
   prevCard = () => {
     this.setState((prevState) => ({
+      currentSwipeDirection: "right",
       currentCardIndex: (prevState.currentCardIndex>0)? prevState.currentCardIndex - 1 : 0
     }))
   }
 
   nextCard = () => {
     this.setState((prevState, props) => ({
+      currentSwipeDirection: "left",
       currentCardIndex: (prevState.currentCardIndex<prevState.allCardData.length-1) ? prevState.currentCardIndex + 1 : prevState.currentCardIndex
     }));
   }
@@ -68,12 +55,11 @@ export default class Home extends Component {
     }))
   }
 
-  /*
-		Function to handle error while form validation
-	*/
   render() {
 
-    const currentCardData = this.state.allCardData.slice(this.state.currentCardIndex, this.state.currentCardIndex+1);
+    const currentCardData = this.state.allCardData[this.state.currentCardIndex];
+
+    // console.log(currentCardData)
 
     return (
 
@@ -81,7 +67,7 @@ export default class Home extends Component {
 
         <Col xs={12} className={`${styles.topBar}`}>
 
-          <BackButton />
+          <BackButton text={`Event`}/>
 
         </Col>
 
@@ -92,17 +78,14 @@ export default class Home extends Component {
                        toggleCardState={this.toggleCardState}
                        currentCardState={this.state.currentCardState}
                        nextCard={this.nextCard}
-                       prevCard={this.prevCard} />
+                       prevCard={this.prevCard}
+                       swipeDirection={this.state.currentSwipeDirection} />
                     
         </Col>
 
         <CardBottomPart cardData={currentCardData}
                         currentCardState={this.state.currentCardState}
                         toggleCardState={this.toggleCardState}/>
-
-
-
-        {/* ONLY FOR TESTING PURPOSE */}
 
         <Col xs={12} className={`${styles.navigationTest}`}>
 
@@ -117,8 +100,6 @@ export default class Home extends Component {
           </div>
 
         </Col>
-
-        {/* ONLY FOR TESTING PURPOSE */}
 
         <Col xs={12} className={`${styles.bottomBarWrapper}`}>
 

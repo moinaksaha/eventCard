@@ -23,7 +23,8 @@ export default class CardWrapper extends Component{
         super();
         this.state = {
             displayData: [],
-            allCardData: []
+            allCardData: [],
+            currentSwipeDirection: "left"
         }
     }
 
@@ -48,31 +49,50 @@ export default class CardWrapper extends Component{
         }))
     }
 
+    changeCurrentSwipeDirection = (direction) => {
+        if(direction && (direction!== this.state.currentSwipeDirection )){
+            this.setState((prevState) => ({
+                currentSwipeDirection: direction
+            }))
+        }
+    }
+
     swiped = (e, deltaX, deltaY, isFlick, velocity) => {
         console.log("You Swiped...", e, deltaX, deltaY, isFlick, velocity);
         if(deltaX > 0){
+            this.changeCurrentSwipeDirection("right");
             const { nextCard } = this.props;
             nextCard();
         }else{
+            this.changeCurrentSwipeDirection("left");
             const { prevCard } = this.props;
-            prevCard()
+            prevCard();
         }
     }
 
 	render = () => {
 
-        const { toggleCardState, currentCardState, currentCardIndex } = this.props;
+        const { toggleCardState, currentCardState, currentCardIndex, swipeDirection } = this.props;
 
-        // const { allCardData, currentCardIndex } = this.props;
-
-        // console.log(styles)
-
-        // const currentCardData = this.state.displayData.slice(0, 1);
         const currentCardData = this.state.allCardData.slice(currentCardIndex, currentCardIndex+1);
 
-        console.log(currentCardData)
+        let cardHeaderAnimationClassNames = null;
 
-        // console.log(this.state.displayData)
+        if(swipeDirection === "left"){
+            cardHeaderAnimationClassNames = {
+                enter: `${styles.enterHeading}`,
+                enterActive: `${styles.enterActiveHeading}`,
+                leave: `${styles.leaveHeading}`,
+                leaveActive: `${styles.leaveActiveHeading}`
+            } 
+        }else if(swipeDirection === "right"){
+            cardHeaderAnimationClassNames = {
+                enter: `${styles.enterHeadingInverted}`,
+                enterActive: `${styles.enterActiveHeadingInverted}`,
+                leave: `${styles.leaveHeadingInverted}`,
+                leaveActive: `${styles.leaveActiveHeadingInverted}`
+            } 
+        }
 
         if(this.state.displayData && this.state.displayData.length>0){
 
@@ -80,53 +100,33 @@ export default class CardWrapper extends Component{
 
                 <div className={``}>
 
-                    <CSSTransitionGroup
-                        transitionName={{
-                            enter: `${styles.enterHeadingNew}`,
-                            enterActive: `${styles.enterActiveHeadingNew}`,
-                            leave: `${styles.leaveHeadingNew}`,
-                            leaveActive: `${styles.leaveActiveHeadingNew}`,
-                            appear: `${styles.appearHeadingNew}`,
-                            appearActive: `${styles.appearActiveHeadingNew}`
-                          } }
-                          transitionLeaveTimeout={300}
-                          transitionEnterTimeout={300}>
+                    {/* CARD HEADING */}
 
-                            <CardHeading cardData={currentCardData} key={currentCardData}/>
-                        
-                    </CSSTransitionGroup>
+                    <div className={`${styles.headingWrapper}`}>
 
-                    {/* <CSSTransitionGroup transitionName={{
-                                                enter: `${styles.enterHeading}`,
-                                                enterActive: `${styles.enterActiveHeading}`,
-                                                leave: `${styles.leaveHeading}`,
-                                                leaveActive: `${styles.leaveActiveHeading}`
-                                            } }
-                                            transitionLeaveTimeout={300}
-                                            transitionEnterTimeout={300}> */}
-                        
-                        {/* <CardHeading cardData={currentCardData} key={currentCardData}/> */}
+                        <CSSTransitionGroup
+                            transitionName={cardHeaderAnimationClassNames}
+                            transitionLeaveTimeout={300}
+                            transitionEnterTimeout={300}>
 
-                        {/* {this.state.displayData.map((object, i) => {
-    
-                            return(
+                            {(currentCardData.map((object, i) => {
 
-                                <CardHeading cardData={object}
-                                        key={object.id}
-                                        position={i}/>
+                                return(
 
-                            )
+                                    <CardHeading cardData={object} key={object.id}/>
 
-                        })} */}
+                                )
 
+                            }))}
+                            
+                        </CSSTransitionGroup>
 
-                    {/* </CSSTransitionGroup> */}
-    
+                    </div>
+
+                    {/* CARD IMAGE */}
                     <Swipeable onSwiped={this.swiped}>
     
                         <div className={`text-center ${styles.cardImageWrapper}`}>
-
-                        {/* <div className={`clearfix`}> */}
 
                         <CSSTransitionGroup transitionName={{
                                                 enter: `${styles.enter}`,
@@ -153,19 +153,11 @@ export default class CardWrapper extends Component{
     
                             })}
 
-
                         </CSSTransitionGroup>
-    
-                        {/* </div> */}
 
                         </div>
 
-    
                     </Swipeable>
-    
-                    {/* <CardBottomPart cardData={currentCardData}
-                                    currentCardState={currentCardState}
-                                    toggleCardState={toggleCardState}/> */}
     
                 </div>
     

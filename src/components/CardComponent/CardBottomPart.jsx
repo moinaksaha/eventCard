@@ -15,7 +15,31 @@ import styles from './CardBottomPart.css';
 export default class CardBottomPart extends Component{
 
 	constructor(){
-    	super();
+		super();
+		this.state = {
+			cardData : []
+		}
+	}
+
+	componentWillReceiveProps = (nextProps) => {
+		// if(nextProps.currentCardState && nextProps.currentCardState === "cardDetail"){
+		// 	this.setCardDetailData();
+		// }else{
+		// 	this.unsetCardDetailData();
+		// }
+	}
+
+	setCardDetailData = () => {
+		const { cardData } = this.props;
+		this.setState((prevState) => ({
+			cardData: cardData
+		}))
+	}
+
+	unsetCardDetailData = () => {
+		this.setState((prevState) => ({
+			cardData: []
+		}))
 	}
 
 	hideCardDetail = (e) => {
@@ -42,9 +66,6 @@ export default class CardBottomPart extends Component{
 
 							`${styles.cardDetailWrapper}`;
 
-
-		// if(currentCardState === "cardDetail"){
-
 			return (
 
 				<div className={cardClass}>
@@ -56,7 +77,8 @@ export default class CardBottomPart extends Component{
 							
 							{currentCardState && currentCardState === "cardDetail" && 
 						
-								<BackButton />
+								<BackButton text={`Event Detail`}
+											isCardDetail={true}/>
 
 							}
 							
@@ -99,12 +121,6 @@ export default class CardBottomPart extends Component{
 				</div>
 	
 			);
-
-		// }else{
-
-		// 	return null;
-
-		// }
 
 	}
 	

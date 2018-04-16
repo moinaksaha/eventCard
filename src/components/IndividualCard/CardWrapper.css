@@ -2,27 +2,16 @@
 	padding: 10px;
 	min-height: 400px;
     margin: 20px 0;
-    /* position: absolute;
-    top: 0;
-    left: 0; */
+}
+
+.headingWrapper{
+	height: 72px;
+	overflow: hidden;
 }
 
 
-/* .appear {
-    opacity: 0.2;
-	transform:   translate(100px,0);
-	transform: translate3d(100px,0,0);
-}
-  
-.appearActive {
-    opacity: 1;
-	transform:   translate(0,0,0);
-	transform: translate3d(0,0,0);
-    transition-property: transform, opacity;
-	transition-duration: 300ms;
-	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease;
-} */
 
+/* IMAGE CAROUSEL CSS */
 .enter {
     opacity: 0;
     transform:   translate(-100px,0);
@@ -54,48 +43,15 @@
 	/* transform: scale(0.8); */
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* HEADING */
-
-/* .enterHeading {
+/* HEADING PART CSS */
+.enterHeading {
     opacity: 0;
-    transform:   translate(0,-100px);
-    transform: translate3d(0,-100px,0);
+    transform:   translate(0,100px);
+    transform: translate3d(0,100px,0);
 }
   
 .enterActiveHeading {
     opacity: 1;
-	transition: opacity 1s ease;
 	transform:   translate(0,0);
 	transform: translate3d(0,0,0);
 	transition-property: transform, opacity;
@@ -104,11 +60,11 @@
 }
 
 .leaveHeading {
-    opacity: 0;
+    opacity: 0.5;
 	transform:   translate(0,0);
 	transform: translate3d(0,0,0);
     transition-property: transform, opacity;
-	transition-duration: 300ms;
+	transition-duration: 100ms;
 	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
 }
 
@@ -116,76 +72,36 @@
     opacity: 0;
 	transform:   translate(0,-100px);
 	transform: translate3d(0,-100px,0);
-} */
+}
 
 
-
-
-/* .appear {
-    opacity: 0;
-	transform:   translate(250px,0);
-	transform: translate3d(250px,0,0);
-    
-  }
-  
-  .appearActive {
-    opacity: 1;
-	transform:   translate(0,0,0);
-	transform: translate3d(0,0,0);
-    transition-property: transform, opacity;
-	transition-duration: 300ms;
-	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
-    
-  } */
-
-
-
-
-
-
-/* .enterHeadingNew {
+/* HEADING PART CSS - INVERTED */
+.enterHeadingInverted {
     opacity: 0;
     transform:   translate(0,-100px);
     transform: translate3d(0,-100px,0);
 }
   
-.enterActiveHeadingNew {
+.enterActiveHeadingInverted {
     opacity: 1;
-	transition: opacity 1s ease;
 	transform:   translate(0,0);
 	transform: translate3d(0,0,0);
 	transition-property: transform, opacity;
 	transition-duration: 300ms;
 	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
-} */
+}
 
-.leaveHeadingNew {
+.leaveHeadingInverted {
     opacity: 0;
-	transform:   translate(0,-100px);
-	transform: translate3d(0,-100px,0);
+	transform:   translate(0,0);
+	transform: translate3d(0,0,0);
     transition-property: transform, opacity;
 	transition-duration: 300ms;
 	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
 }
 
-.leaveActiveHeadingNew {
+.leaveActiveHeadingInverted {
     opacity: 0;
-	transform:   translate(0,0);
-	transform: translate3d(0,0,0);
+	transform:   translate(0,100px);
+	transform: translate3d(0,100px,0);
 }
-
-/* .appearHeadingNew {
-    opacity: 0;
-    transform:   translate(0,-100px);
-    transform: translate3d(0,-100px,0);
-}
-  
-.appearActiveHeadingNew {
-    opacity: 1;
-	transition: opacity 1s ease;
-	transform:   translate(0,0);
-	transform: translate3d(0,0,0);
-	transition-property: transform, opacity;
-	transition-duration: 300ms;
-	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
-}  */

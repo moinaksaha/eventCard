@@ -20,7 +20,7 @@
 }
 .cardDetailWrapper .cardContentHolder{
     background: $colorWhite;
-    height: 100%;
+    height: calc(100% - 450px);
 }
 .cardDetailTopPart{
     padding: 10px;
@@ -42,8 +42,57 @@
 }
 .interestedButtonHolder{
     display: inline-block;
-    float: right;
     position: absolute;
     right: 35px;
     top: 35px;
 }
+
+
+
+/* .appear {
+    opacity: 0;
+    transform:   translate(-100px,0);
+    transform: translate3d(-100px,0,0);
+}
+  
+.appearActive {
+    opacity: 1;
+	transform:   translate(0,0);
+	transform: translate3d(0,0,0);
+	transition-property: all;
+    transition-duration: 300ms;
+    transition-delay: 1000ms;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease;
+}
+
+.enter {
+    opacity: 0;
+    transform:   translate(-100px,0);
+    transform: translate3d(-100px,0,0);
+}
+  
+.enterActive {
+    opacity: 1;
+	transform:   translate(0,0);
+	transform: translate3d(0,0,0);
+	transition-property: all;
+    transition-duration: 300ms;
+    transition-delay: 1000ms;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease;
+}
+
+.leave {
+    opacity: 1;
+	transform:   translate(0,0);
+	transform: translate3d(0,0,0);
+    transition-property: all;
+	transition-duration: 300ms;
+    transition-delay: 500ms;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease;
+}
+
+.leaveActive {
+    opacity: 0;
+	transform:   translate(-100px,0);
+	transform: translate3d(-100px,0,0);
+} */

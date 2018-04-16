@@ -2,8 +2,8 @@
 
 .mainWrapper{
 	position: relative;
-    max-width: 500px;
-    background-color: #e6e6e6;
+    max-width: 400px;
+    background-color: #ffffff;
     margin-left: auto;
 	margin-right: auto;
 	overflow: hidden;
@@ -25,11 +25,12 @@
 .navigationTest .prev{
 	position: relative;
 	left: 0;
-	display: inline-block;
+	float:left;
+	padding: 5px 10px;
 }
 .navigationTest .next{
 	position: relative;
 	right: 0;
-	display: inline-block;
 	float: right;
+	padding: 5px 10px;
 }
