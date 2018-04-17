@@ -57,7 +57,7 @@ export default class CardWrapper extends Component{
     // }
 
     swiped = (e, deltaX, deltaY, isFlick, velocity) => {
-        console.log("You Swiped...", e, deltaX, deltaY, isFlick, velocity);
+        // console.log("You Swiped...", e, deltaX, deltaY, isFlick, velocity);
         if(deltaX > 0){
             // this.changeCurrentSwipeDirection("right");
             const { nextCard } = this.props;

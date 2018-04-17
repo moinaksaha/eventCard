@@ -14,51 +14,34 @@ export default class CardHeading extends Component{
 
 		const { cardData, position, forCardDetail } = this.props;
 
-		console.log(cardData);
-
 		const cardHeadingClassName = (forCardDetail === true) ? 
 									`${styles.cardHeading}`:
 									`${styles.cardHeading} ${styles.isNotCardDetail}`;
-		
-		// const cardDateClassName = (forCardDetail === true) ? 
-		// 							`${styles.cardDateNew}`:
-		// 							`${styles.cardDateNew} pull-right`;
 
-		// if(position === 0){
+		return (
 
-			return (
+			<div className={cardHeadingClassName}>
 
-				<div className={cardHeadingClassName}>
+				<div className={`${styles.titleLocationWrapper}`}>
 
-					<div className={`${styles.titleLocationWrapper}`}>
+					<div className={`${styles.cardTitle}`}>{cardData.title}</div>
 	
-						<div className={`${styles.cardTitle}`}>{cardData.title}</div>
-		
-						<div className={`${styles.cardLocation}`}>
+					<div className={`${styles.cardLocation}`}>
 
-							<span><Glyphicon glyph="map-marker" /></span>
+						<span><Glyphicon glyph="map-marker" /></span>
 
-							<span className={`${styles.cardLocationText}`}>{cardData.location}</span>
-							
-						</div>
-
+						<span className={`${styles.cardLocationText}`}>{cardData.location}</span>
+						
 					</div>
 
-					<div className={`${styles.cardDateNew}`}>{cardData.date}</div>
-					
-					{/* <div className={cardDateClassName}>{cardData.date}</div> */}
-	
 				</div>
-	
-			);
 
-		// }else{
+				<div className={`${styles.cardDateNew}`}>{cardData.date}</div>
 
-		// 	return null;
+			</div>
 
-		// }
+		);
 		
-
 	}
 	
 };
