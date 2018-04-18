@@ -23,8 +23,8 @@ export default class CardWrapper extends Component{
         super();
         this.state = {
             displayData: [],
-            allCardData: [],
-            currentSwipeDirection: "left"
+            // allCardData: [],
+            // currentSwipeDirection: "left"
         }
     }
 
@@ -32,8 +32,7 @@ export default class CardWrapper extends Component{
         const { allCardData, currentCardIndex } = this.props;
         // console.log("duh", allCardData, currentCardIndex)
         this.setState({
-            displayData: allCardData.slice(currentCardIndex),
-            allCardData: allCardData
+            displayData: allCardData.slice(currentCardIndex)
         })
     }
 
@@ -44,27 +43,27 @@ export default class CardWrapper extends Component{
     }
 
     changeDisplayData = (index) => {
-        this.setState((prevState) => ({
-            displayData: prevState.allCardData.slice(index)
+        this.setState((prevState, props) => ({
+            displayData: props.allCardData.slice(index)
         }))
     }
 
-    changeCurrentSwipeDirection = (direction) => {
-        if(direction && (direction!== this.state.currentSwipeDirection )){
-            this.setState((prevState) => ({
-                currentSwipeDirection: direction
-            }))
-        }
-    }
+    // changeCurrentSwipeDirection = (direction) => {
+    //     if(direction && (direction!== this.state.currentSwipeDirection )){
+    //         this.setState((prevState) => ({
+    //             currentSwipeDirection: direction
+    //         }))
+    //     }
+    // }
 
     swiped = (e, deltaX, deltaY, isFlick, velocity) => {
-        console.log("You Swiped...", e, deltaX, deltaY, isFlick, velocity);
+        // console.log("You Swiped...", e, deltaX, deltaY, isFlick, velocity);
         if(deltaX > 0){
-            this.changeCurrentSwipeDirection("right");
+            // this.changeCurrentSwipeDirection("right");
             const { nextCard } = this.props;
             nextCard();
         }else{
-            this.changeCurrentSwipeDirection("left");
+            // this.changeCurrentSwipeDirection("left");
             const { prevCard } = this.props;
             prevCard();
         }
@@ -72,9 +71,9 @@ export default class CardWrapper extends Component{
 
 	render = () => {
 
-        const { toggleCardState, currentCardState, currentCardIndex, swipeDirection } = this.props;
+        const { allCardData, toggleCardState, currentCardState, currentCardIndex, swipeDirection } = this.props;
 
-        const currentCardData = this.state.allCardData.slice(currentCardIndex, currentCardIndex+1);
+        const currentCardData = allCardData.slice(currentCardIndex, currentCardIndex+1);
 
         let cardHeaderAnimationClassNames = null;
 

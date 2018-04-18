@@ -27,7 +27,7 @@ export default class App extends Component {
 
     return (
 
-      <Grid fluid >
+      <Grid fluid className={`${styles.mainContainer}`}>
 
         {children}
 

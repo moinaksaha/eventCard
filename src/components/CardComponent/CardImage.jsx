@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
 
 import { Image } from 'react-bootstrap';
- 
+
 import styles from './CardImage.css';
+
+const canUseDOM = !!((typeof window !== 'undefined' && window.document && window.document.createElement));
+
+let width = 0;
+
+let height = 0;
 
 export default class CardImage extends Component{
 
 	constructor(){
 		super();
-		
+		this.state = {
+			width: 0,
+			height: 0
+		}
 	}
 
 	showHideDetail = (e) => {
@@ -30,7 +39,7 @@ export default class CardImage extends Component{
 			zIndex: 999-position,
 			opacity: 1 - (0.2*position),
 			width: 250 - (40*position) + 'px',
-			height: 375 - (40*position) + 'px'
+			height: 360 - (40*position) + 'px'
 		};
 
 		const cardDetailClass = (currentCardState && currentCardState === "cardDetail" && position === 0) ? 

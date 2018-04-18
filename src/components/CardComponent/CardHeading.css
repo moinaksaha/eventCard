@@ -1,5 +1,5 @@
 .cardHeading{
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 .cardHeading .cardDateNew{
@@ -16,7 +16,7 @@
     float: none;
 }
 .cardHeading .titleLocationWrapper .cardTitle{
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
 }
 .cardHeading .titleLocationWrapper .cardLocation{
