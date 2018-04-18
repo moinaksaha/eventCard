@@ -11,5 +11,11 @@
     transition: all 0.3s ease;
 }
 .cardImageDiv.fixed{
-    transform: scale(2);
+    transform: scale(1.5);
+}
+
+@media only screen and (max-width : 767px) {
+	.cardImageDiv.fixed{
+        transform: scale(1.8);
+    }
 }

@@ -1,11 +1,18 @@
 .cardImageWrapper{
 	/* padding: 0 10px; */
 	min-height: 360px;
-    /* margin: 20px 0; */
+	/* margin: 20px 0; */
+	width: calc(100vw - 50px);
+	height: calc(100vw - 50px);
+	max-width: calc(100vh - 230px);
+	max-height: calc(100vh - 230px);
+	/* background: red; */
+	position: relative;
+	margin: 15px 0;
 }
 
 .headingWrapper{
-	height: 72px;
+	height: 50px;
 	overflow: hidden;
 }
 
@@ -24,7 +31,7 @@
 	transform: translate3d(0,0,0);
 	transition-property: transform, opacity;
 	transition-duration: 300ms;
-	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease-in;
 }
 
 .leave {
@@ -33,7 +40,7 @@
 	transform: translate3d(0,0,0);
     transition-property: transform, opacity;
 	transition-duration: 300ms;
-	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease-in;
 }
 
 .leaveActive {
@@ -55,7 +62,7 @@
 	transform: translate3d(0,0,0);
 	transition-property: transform, opacity;
 	transition-duration: 300ms;
-	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease-in;
 }
 
 .leaveHeading {
@@ -64,7 +71,7 @@
 	transform: translate3d(0,0,0);
     transition-property: transform, opacity;
 	transition-duration: 150ms;
-	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease-in;
 }
 
 .leaveActiveHeading {
@@ -87,7 +94,7 @@
 	transform: translate3d(0,0,0);
 	transition-property: transform, opacity;
 	transition-duration: 300ms;
-	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease-in;
 }
 
 .leaveHeadingInverted {
@@ -96,7 +103,7 @@
 	transform: translate3d(0,0,0);
     transition-property: transform, opacity;
 	transition-duration: 300ms;
-	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease-in;
 }
 
 .leaveActiveHeadingInverted {
