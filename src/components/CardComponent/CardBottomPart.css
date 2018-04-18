@@ -7,7 +7,6 @@
     bottom: 0;
     left: 0;
     height: 0%;
-    /* height: 200px; */
     width: 100%;
     z-index: 999;
     overflow-y: scroll;
@@ -16,12 +15,8 @@
 .cardDetailWrapper.visible{
     height: 100%;
 }
-.cardDetailWrapper .topBlankPart{
-    height: 450px;
-}
 .cardDetailWrapper .cardContentHolder{
     background: $colorWhite;
-    /* height: calc(100% - 450px); */
     height: auto;
     position: absolute;
     bottom: 0;
@@ -34,26 +29,10 @@
     display: block;
 }
 
-
-
-
-/* .appear{
-    opacity: 0;
-    transform:   translate(0,100px);
-    transform: translate3d(0,100px,0);
-}
-.appearActive{
-    opacity: 1;
-	transform:   translate(0,0);
-	transform: translate3d(0,0,0);
-	transition-property: transform, opacity;
-	transition-duration: 300ms;
-	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
-} */
 .enter {
     opacity: 0;
-    transform:   translate(0,100px);
-    transform: translate3d(0,100px,0);
+    transform:   translate(0,200px);
+    transform: translate3d(0,200px,0);
 }
   
 .enterActive {
@@ -61,8 +40,8 @@
 	transform:   translate(0,0);
 	transform: translate3d(0,0,0);
 	transition-property: transform, opacity;
-	transition-duration: 200ms;
-	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+	transition-duration: 400ms;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease-in;
 }
 
 .leave {
@@ -70,12 +49,12 @@
 	transform:   translate(0,0);
 	transform: translate3d(0,0,0);
     transition-property: transform, opacity;
-	transition-duration: 100ms;
-	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
+	transition-duration: 300ms;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease-in;
 }
 
 .leaveActive {
     opacity: 0;
-	transform:   translate(0,100px);
-	transform: translate3d(0,100px,0);
+	transform:   translate(0,200px);
+	transform: translate3d(0,200px,0);
 }

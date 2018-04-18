@@ -39,13 +39,13 @@ export default class InterestedButton extends Component{
 
                             <div className={`${styles.front} ${styles.face}`}>
 
-                                Going
+                                Interested
 
                             </div>
 
                             <div className={`${styles.back} ${styles.face} ${styles.center}`}>
 
-                                Interested
+                                Going
 
                             </div>
 

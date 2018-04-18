@@ -14,16 +14,14 @@ export default class CardImage extends Component{
 
 	constructor(){
 		super();
-		this.state = {
-			width: 0,
-			height: 0
-		}
 	}
 
 	showHideDetail = (e) => {
 		e.stopPropagation();
-		const { toggleCardState } = this.props;
-		toggleCardState();
+		const { toggleCardState, position } = this.props;
+		if(position === 0){
+			toggleCardState();
+		}
 	}
 
 	render = () => {

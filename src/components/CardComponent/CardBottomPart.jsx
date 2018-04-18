@@ -56,11 +56,10 @@ export default class CardBottomPart extends Component{
 	}
 
 	swiped = (e, deltaX, deltaY, isFlick, velocity) => {
-        // console.log("You Swiped...", e, deltaX, deltaY, isFlick, velocity);
-        // if(deltaY < 0){
-        //     const { toggleCardState } = this.props;
-        //     toggleCardState();
-        // }
+        if(deltaY < 0){
+            const { toggleCardState } = this.props;
+            toggleCardState();
+        }
 	}
 	
 	preventEventPropagation = (e) => {
@@ -85,60 +84,16 @@ export default class CardBottomPart extends Component{
 
 			return (
 
+				<Swipeable onSwiped={this.swiped}>
+
 				<div className={cardClass}
 					 onClick={this.hideCardDetail}>
 
-					<div className={`${styles.backButtonHolder}`}>
+					
 
-					<CSSTransitionGroup transitionName={{
-							enter: `${styles.enter}`,
-							enterActive: `${styles.enterActive}`,
-							leave: `${styles.leave}`,
-							leaveActive: `${styles.leaveActive}`,
-							appear: `${styles.appear}`,
-							appearActive: `${styles.appearActive}`
-						}}
-						transitionLeaveTimeout={300}
-						transitionEnterTimeout={300}>
+						<div className={`${styles.backButtonHolder}`}>
 
-						{(this.state.currentCardData.map((object, i) => {
-
-							return(
-
-								<BackButton text={`Event Detail`}
-											isCardDetail={true} 
-											key={object.id}/>
-
-							)
-
-						}))}
-
-					</CSSTransitionGroup>
-
-					</div>
-
-					{/* <Swipeable onSwiped={this.swiped}>
-
-						<div className={`${styles.topBlankPart}`}
-							onClick={this.hideCardDetail}>
-							
-							{currentCardState && currentCardState === "cardDetail" && 
-						
-								<BackButton text={`Event Detail`}
-											isCardDetail={true}/>
-
-							}
-							
-						</div>
-
-					</Swipeable> */}
-	
-					<div className={`${styles.cardContentHolder}`}
-						 onClick={this.preventEventPropagation}>
-
-
-						<CSSTransitionGroup
-                            transitionName={{
+						<CSSTransitionGroup transitionName={{
 								enter: `${styles.enter}`,
 								enterActive: `${styles.enterActive}`,
 								leave: `${styles.leave}`,
@@ -146,52 +101,57 @@ export default class CardBottomPart extends Component{
 								appear: `${styles.appear}`,
 								appearActive: `${styles.appearActive}`
 							}}
-                            transitionLeaveTimeout={300}
-                            transitionEnterTimeout={300}>
+							transitionLeaveTimeout={300}
+							transitionEnterTimeout={300}>
 
-                            {(this.state.currentCardData.map((object, i) => {
+							{(this.state.currentCardData.map((object, i) => {
 
-                                return(
+								return(
 
-                                    <CardBottomPartContent cardData={object} key={object.id}/>
+									<BackButton text={`Event Detail`}
+												isCardDetail={true} 
+												key={object.id}/>
 
-                                )
+								)
 
-                            }))}
-                            
-                        </CSSTransitionGroup>
+							}))}
 
-						{/* <div className={`${styles.cardDetailTopPart}`}>
+						</CSSTransitionGroup>
 
-							<CardHeading cardData={cardData}
-										 forCardDetail={true}/>
+						</div>
+		
+						<div className={`${styles.cardContentHolder}`}
+							onClick={this.preventEventPropagation}>
 
-							<div className={`${styles.interestedButtonHolder}`}>
+							<CSSTransitionGroup
+								transitionName={{
+									enter: `${styles.enter}`,
+									enterActive: `${styles.enterActive}`,
+									leave: `${styles.leave}`,
+									leaveActive: `${styles.leaveActive}`
+								}}
+								transitionLeaveTimeout={300}
+								transitionEnterTimeout={300}>
 
-								<InterestedButton />
+								{(this.state.currentCardData.map((object, i) => {
 
-							</div>
-							
+									return(
+
+										<CardBottomPartContent cardData={object} key={object.id}/>
+
+									)
+
+								}))}
+								
+							</CSSTransitionGroup>
 
 						</div>
 
-						<div className={`${styles.calendarSyncDiv}`}>
-
-							<div>Add to calendar</div>
-
-							<div className={`pull-right`}>
-
-								<span className={`${styles.knowMoreText}`}>Know More</span>
-
-								<span><Glyphicon glyph="arrow-right" /></span>
-
-							</div>
-
-						</div> */}
-
-					</div>
+					
 	
 				</div>
+
+				</Swipeable>
 	
 			);
 
