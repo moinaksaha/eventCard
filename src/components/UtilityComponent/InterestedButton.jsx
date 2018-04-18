@@ -19,22 +19,42 @@ export default class InterestedButton extends Component{
 
 	render = () => {
 
-        const displayText = (this.state.isGoing) ? 
-                            `Going` : 
-                            `Interested`;
+        // const displayText = (this.state.isGoing) ? 
+        //                     `Going` : 
+        //                     `Interested`;
 
         const isGoingClassName = (this.state.isGoing)?
-                                    `${styles.interestedButton} ${styles.isGoing}`:
-                                    `${styles.interestedButton}`;
+                                    `${styles.f1_container} ${styles.isGoing}`:
+                                    `${styles.f1_container}`;
 
 		return (
 
-            <div className={isGoingClassName}
-                    onClick={this.toggleAction}>
+            <div className={`${styles.interestedButton}`}
+                 onClick={this.toggleAction}>
 
-                {displayText}
+                    {/* {displayText} */}
+                    <div className={isGoingClassName}>
+
+                        <div className={`${styles.f1_card} ${styles.shadow}`}>
+
+                            <div className={`${styles.front} ${styles.face}`}>
+
+                                Going
+
+                            </div>
+
+                            <div className={`${styles.back} ${styles.face} ${styles.center}`}>
+
+                                Interested
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
             </div>
+            
 
 		);
 
