@@ -6,7 +6,7 @@ export default
             "title": "Lamborghini",
             "location": "London, U.K.",
             "date": "Aug 25, 2018",
-            "image_url": "https://i.pinimg.com/originals/ac/b7/4d/acb74dd026730eb383d1c5f24c728a16.jpg"
+            "image_url": "https://www.lamborghinivancouver.com/wp-content/uploads/2016/12/v6g744-17-aventador-black_26-1170x700.jpg"
         },
         {
             "id":"card2",

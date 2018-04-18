@@ -58,3 +58,33 @@
 	transform:   translate(0,200px);
 	transform: translate3d(0,200px,0);
 }
+
+.enterCalendar {
+    opacity: 0;
+    transform:   translate(0,100px);
+    transform: translate3d(0,100px,0);
+}
+  
+.enterActiveCalendar {
+    opacity: 1;
+	transform:   translate(0,0);
+	transform: translate3d(0,0,0);
+	transition-property: transform, opacity;
+	transition-duration: 600ms;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease-in;
+}
+
+.leaveCalendar {
+    opacity: 1;
+	transform:   translate(0,0);
+	transform: translate3d(0,0,0);
+    transition-property: transform, opacity;
+	transition-duration: 100ms;
+	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease-in;
+}
+
+.leaveActiveCalendar {
+    opacity: 0;
+	transform:   translate(0,100px);
+	transform: translate3d(0,100px,0);
+}

@@ -1,0 +1,37 @@
+@import '../../theme/colors.scss';
+
+.cardDetailTopPart{
+    padding: 10px 15px;
+    border-bottom: 1px solid #e6e6e6;
+    position: relative;
+}
+
+.interestedButtonHolder{
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 35px;
+}
+
+.calendarSyncDiv{
+    padding: 15px;
+    font-weight: 500;
+}
+.calendarSyncDiv > div{
+    display: inline-block;
+}
+.calendarSyncDiv .knowMoreText{
+    margin-right: 10px;
+    position: relative;
+    top: -1px;
+    color: #00cc92;
+}
+
+@media only screen and (min-width : 400px) {
+	.cardDetailTopPart, .calendarSyncDiv{
+		padding: 20px 25px;
+    }
+    .interestedButtonHolder{
+        right: 25px;
+    }
+}

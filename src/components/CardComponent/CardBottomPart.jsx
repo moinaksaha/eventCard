@@ -11,6 +11,7 @@ import BackButton from '../UtilityComponent/BackButton';
 import { CSSTransitionGroup } from 'react-transition-group'
 
 import CardBottomPartContent from './CardBottomPartContent';
+import CardBottomPartCalendar from './CardBottomPartCalendar';
 
 import InterestedButton from '../UtilityComponent/InterestedButton';
 
@@ -138,6 +139,29 @@ export default class CardBottomPart extends Component{
 									return(
 
 										<CardBottomPartContent cardData={object} key={object.id}/>
+
+									)
+
+								}))}
+								
+							</CSSTransitionGroup>
+
+
+							<CSSTransitionGroup
+								transitionName={{
+									enter: `${styles.enterCalendar}`,
+									enterActive: `${styles.enterActiveCalendar}`,
+									leave: `${styles.leaveCalendar}`,
+									leaveActive: `${styles.leaveActiveCalendar}`
+								}}
+								transitionLeaveTimeout={300}
+								transitionEnterTimeout={300}>
+
+								{(this.state.currentCardData.map((object, i) => {
+
+									return(
+
+										<CardBottomPartCalendar cardData={object} key={object.id}/>
 
 									)
 
