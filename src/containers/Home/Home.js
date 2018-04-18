@@ -83,7 +83,8 @@ export default class Home extends Component {
                     
         </Col>
 
-        <CardBottomPart cardData={currentCardData}
+        <CardBottomPart allCardData={this.state.allCardData}
+                        currentCardIndex={this.state.currentCardIndex}
                         currentCardState={this.state.currentCardState}
                         toggleCardState={this.toggleCardState}/>
 

@@ -1,7 +1,7 @@
 .cardImageWrapper{
-	padding: 10px;
-	min-height: 400px;
-    margin: 20px 0;
+	/* padding: 0 10px; */
+	min-height: 360px;
+    /* margin: 20px 0; */
 }
 
 .headingWrapper{
@@ -22,7 +22,7 @@
     opacity: 1;
 	transform:   translate(0,0);
 	transform: translate3d(0,0,0);
-	transition-property: all;
+	transition-property: transform, opacity;
 	transition-duration: 300ms;
 	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease;
 }
@@ -31,7 +31,7 @@
     opacity: 1;
 	transform:   translate(0,0);
 	transform: translate3d(0,0,0);
-    transition-property: all;
+    transition-property: transform, opacity;
 	transition-duration: 300ms;
 	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), ease;
 }
@@ -40,7 +40,6 @@
     opacity: 0;
 	transform:   translate(-100px,0);
 	transform: translate3d(-100px,0,0);
-	/* transform: scale(0.8); */
 }
 
 /* HEADING PART CSS */
@@ -64,7 +63,7 @@
 	transform:   translate(0,0);
 	transform: translate3d(0,0,0);
     transition-property: transform, opacity;
-	transition-duration: 100ms;
+	transition-duration: 150ms;
 	transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear;
 }
 
