@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
+// Imports from Bootstrap
 import styles from './FlashMessage.css';
 
 export default class FlashMessage extends Component{
@@ -22,6 +24,7 @@ export default class FlashMessage extends Component{
 	
 };
 
+// Proptype validation
 FlashMessage.defaultProps = {
-
+    hildren: PropTypes.string.isRequired
 };

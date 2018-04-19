@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 
-import CardHeading from './CardHeading';
+// PropTypes Imports
+import PropTypes from 'prop-types';
 
+// component imports
+import CardHeading from './CardHeading';
 import InterestedButton from '../UtilityComponent/InterestedButton';
 
+// CSS Imports
 import styles from './CardBottomPartContent.css';
 
 export default class CardBottomPartContent extends Component{
@@ -33,6 +37,7 @@ export default class CardBottomPartContent extends Component{
 	
 };
 
+// props validation
 CardBottomPartContent.defaultProps = {
-
+	cardData: PropTypes.object
 };

@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 
+// CSS Imports
 import styles from './InterestedButton.css';
 
 export default class InterestedButton extends Component{
 
 	constructor(){
         super();
+        // Initial State
         this.state = {
-            isGoing: false
+            isGoing: false //To decide the state of the button
         }
     }
     
+    // FUNCTION TO TOGGLE THE value of 'isGoing' 
     toggleAction = () => {
         this.setState((prevState) => ({
             isGoing: !prevState.isGoing
@@ -19,9 +22,10 @@ export default class InterestedButton extends Component{
 
 	render = () => {
 
+        // className according to the value of 'isGoing'
         const isGoingClassName = (this.state.isGoing)?
-                                    `${styles.f1_container} ${styles.isGoing}`:
-                                    `${styles.f1_container}`;
+                                    `${styles.flipButtonContainer} ${styles.isGoing}`:
+                                    `${styles.flipButtonContainer}`;
 
 		return (
 
@@ -31,7 +35,7 @@ export default class InterestedButton extends Component{
                     {/* {displayText} */}
                     <div className={isGoingClassName}>
 
-                        <div className={`${styles.f1_card} ${styles.shadow}`}>
+                        <div className={`${styles.buttonWrapper} ${styles.shadow}`}>
 
                             <div className={`${styles.front} ${styles.face}`}>
 
@@ -39,7 +43,7 @@ export default class InterestedButton extends Component{
 
                             </div>
 
-                            <div className={`${styles.back} ${styles.face} ${styles.center}`}>
+                            <div className={`${styles.back} ${styles.face}`}>
 
                                 Going
 
@@ -56,8 +60,4 @@ export default class InterestedButton extends Component{
 
 	}
 	
-};
-
-InterestedButton.defaultProps = {
-
 };

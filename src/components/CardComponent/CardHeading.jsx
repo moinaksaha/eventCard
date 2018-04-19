@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 
+// PropTypes Imports
+import PropTypes from 'prop-types';
+
+// Imports from Bootstrap
 import { Glyphicon } from 'react-bootstrap';
 
+// CSS Imports
 import styles from './CardHeading.css';
 
 export default class CardHeading extends Component{
@@ -10,6 +15,7 @@ export default class CardHeading extends Component{
 
 		const { cardData, forCardDetail } = this.props;
 
+		// Styling based on the 'forCardDetail' prop
 		const cardHeadingClassName = (forCardDetail === true) ? 
 									`${styles.cardHeading}`:
 									`${styles.cardHeading} ${styles.isNotCardDetail}`;
@@ -43,5 +49,5 @@ export default class CardHeading extends Component{
 };
 
 CardHeading.defaultProps = {
-
+	cardData: PropTypes.object
 };

@@ -11,6 +11,7 @@
 
 import React, { Component } from 'react';
 
+// Imports from Bootstrap
 import { Row, Col, Glyphicon } from 'react-bootstrap';
 
 // Assumed an array of object as the sample data for the cards
@@ -39,6 +40,7 @@ export default class Home extends Component {
     }
   }
 
+  // FUNCTION TO SHOW AND HIDE THE FLASH MESSAGE WHEN USER REACHES THE END OF THE SLIDER
   showFlashMessage = () => {
     this.setState({
       showGalleryEndMessage: true
@@ -50,10 +52,10 @@ export default class Home extends Component {
     }, 2000)
   }
 
+  // FUNCTION TO GO TO THE NEXT CARD 
+  // If the user is at the end of the slider, show the flash message 
+  // Otherwise, increment the 'currentCardIndex' by 1
   prevCard = () => {
-    console.log("currentCardIndex", this.state.currentCardIndex);
-    console.log("allCardData.length", this.state.allCardData.length);
-    console.log("====================================")
     if(this.state.currentCardIndex > 0){
       this.setState((prevState) => ({
         currentSwipeDirection: "right",
@@ -64,10 +66,10 @@ export default class Home extends Component {
     }
   }
 
+  // FUNCTION TO GO TO THE PREVIOUS CARD 
+  // If the user is at the end of the slider, show the flash message 
+  // Otherwise, decrement the 'currentCardIndex' by 1
   nextCard = () => {
-    console.log("currentCardIndex", this.state.currentCardIndex);
-    console.log("allCardData.length", this.state.allCardData.length);
-    console.log("====================================")
     if(this.state.currentCardIndex < this.state.allCardData.length-1){
       this.setState((prevState, props) => ({
         currentSwipeDirection: "left",
@@ -78,6 +80,8 @@ export default class Home extends Component {
     }
   }
 
+  // FUNCTION TO TOGGLE THE CARD STATE IN BETWEEN 'cardDetail' and 'carousel'
+  // This decides if to show the 'Card Detail' or the 'Slider'
   toggleCardState = () => {
     this.setState((prevState) => ({
       currentCardState: (prevState.currentCardState === "carousel") ? "cardDetail" : "carousel"
@@ -90,12 +94,14 @@ export default class Home extends Component {
 
       <Row className={`${styles.mainWrapper}`}>
 
+        {/* Back Button holder - TOP */}
         <Col xs={12} className={`${styles.topBar}`}>
 
           <BackButton text={`Event`}/>
 
         </Col>
 
+        {/* Wrapper for the Slider and Title */}
         <Col xs={12}>
 
           <CardWrapper allCardData={this.state.allCardData}
@@ -108,11 +114,13 @@ export default class Home extends Component {
                     
         </Col>
 
+        {/* Holder for the card detail in the bottom to slide out into view later */}
         <CardBottomPart allCardData={this.state.allCardData}
                         currentCardIndex={this.state.currentCardIndex}
                         currentCardState={this.state.currentCardState}
                         toggleCardState={this.toggleCardState}/>
 
+        {/* Navigation buttons for devices without TOUCH support */}
         <Col xs={12} className={`${styles.navigationTest} text-center`}>
 
           <div className={`pull-left ${styles.prev}`}
@@ -120,6 +128,7 @@ export default class Home extends Component {
             <Glyphicon glyph="chevron-left"/>
           </div>
 
+          {/* Flash message when user reaches the end of the Slider */}
           {this.state.showGalleryEndMessage && 
 
             <div className={`${styles.flashMessageHolder}`}>
@@ -136,7 +145,8 @@ export default class Home extends Component {
           </div>
 
         </Col>
-
+        
+        {/* Holder for the hamburger-icon and Create-Event button on the bottom */}
         <Col xs={12} className={`${styles.bottomBarWrapper}`}>
 
           <BottomBar />
@@ -150,7 +160,3 @@ export default class Home extends Component {
   }
 
 }
-
-// Home.propTypes = {
-
-// };
