@@ -15,13 +15,7 @@ import { Grid } from 'react-bootstrap';
 import styles from './App.css';
 
 export default class App extends Component {
-  // constructor(props) {
-  //   /**
-  //    * This is for illustration purpose. Since this is empty. It can be removed
-  //   */
-  //   super(props);
-  // }
-
+  
   render() {
     
     const { children } = this.props;

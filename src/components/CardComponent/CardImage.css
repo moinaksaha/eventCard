@@ -1,7 +1,3 @@
-/* .cardImageWrapper{
-    padding: 10px;
-} */
-
 .cardImageDiv{
     width: 200px;
     height: 300px;
@@ -11,11 +7,5 @@
     transition: all 0.3s ease;
 }
 .cardImageDiv.fixed{
-    transform: scale(1.5);
-}
-
-@media only screen and (max-width : 767px) {
-	.cardImageDiv.fixed{
-        transform: scale(1.8);
-    }
+    transform: scale(2);
 }

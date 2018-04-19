@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
+// Imports from Bootstrap
 import { Glyphicon } from 'react-bootstrap';
 
+// CSS Imports
 import styles from './BottomBar.css';
 
 export default class BottomBar extends Component{

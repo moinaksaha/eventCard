@@ -30,6 +30,10 @@
 	float: right;
 	padding: 5px 0px;
 }
+.flashMessageHolder{
+	padding: 4px 0;
+    display: inline-block;
+}
 
 @media only screen and (min-width : 400px) {
 	.mainWrapper{

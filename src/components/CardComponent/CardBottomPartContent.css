@@ -2,7 +2,7 @@
 
 .cardDetailTopPart{
     padding: 10px 15px;
-    border-bottom: 1px solid #e6e6e6;
+    border-bottom: 1px solid $colorBorderLightGrey;
     position: relative;
 }
 
@@ -24,7 +24,7 @@
     margin-right: 10px;
     position: relative;
     top: -1px;
-    color: #00cc92;
+    color: $colorGreen;
 }
 
 @media only screen and (min-width : 400px) {
