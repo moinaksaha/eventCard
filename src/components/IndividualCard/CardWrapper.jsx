@@ -41,10 +41,10 @@ export default class CardWrapper extends Component{
     }
 
     swiped = (e, deltaX, deltaY, isFlick, velocity) => {
-        if(deltaX > 0){
+        if(deltaX > 40){
             const { nextCard } = this.props;
             nextCard();
-        }else{
+        }else if(deltaX < -40){
             const { prevCard } = this.props;
             prevCard();
         }

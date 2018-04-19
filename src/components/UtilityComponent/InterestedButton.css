@@ -1,10 +1,12 @@
+@import '../../theme/colors.scss';
+
 .interestedButton{
   width: 100px;
   height: 33px;
   font-size: 12px;
   font-weight: 500;
   background: transparent;
-  color: white;
+  color: $colorWhite;
   border: 0;
   transition: 0.5s;
   border-radius: 4px;

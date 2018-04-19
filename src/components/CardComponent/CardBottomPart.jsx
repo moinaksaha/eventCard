@@ -49,7 +49,7 @@ export default class CardBottomPart extends Component{
 	}
 
 	swiped = (e, deltaX, deltaY, isFlick, velocity) => {
-        if(deltaY < 0){
+        if(deltaY < -40){
             const { toggleCardState } = this.props;
             toggleCardState();
         }

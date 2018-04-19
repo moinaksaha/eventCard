@@ -1,3 +1,5 @@
+@import '../../theme/colors.scss';
+
 .backButtonWrapper{
     display: inline-block;
     font-size: 11px;
@@ -8,7 +10,7 @@
     margin-left: 5px;
 }
 .backButtonWrapper.shadow{
-    color: white;
+    color: $colorWhite;
     padding: 10px 15px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 }

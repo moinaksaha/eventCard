@@ -2,7 +2,7 @@
 
 .mainWrapper{
 	position: relative;
-    background-color: #ffffff;
+    background-color: $colorWhite;;
 	overflow: hidden;
 	border: 2px solid;
 }
