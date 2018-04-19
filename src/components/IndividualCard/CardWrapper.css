@@ -1,12 +1,9 @@
 .cardImageWrapper{
-	/* padding: 0 10px; */
 	min-height: 360px;
-	/* margin: 20px 0; */
 	width: calc(100vw - 50px);
 	height: calc(100vw - 50px);
 	max-width: calc(100vh - 230px);
 	max-height: calc(100vh - 230px);
-	/* background: red; */
 	position: relative;
 	margin: 15px 0;
 }
@@ -15,8 +12,6 @@
 	height: 50px;
 	overflow: hidden;
 }
-
-
 
 /* IMAGE CAROUSEL CSS */
 .enter {

@@ -19,10 +19,6 @@ export default class InterestedButton extends Component{
 
 	render = () => {
 
-        // const displayText = (this.state.isGoing) ? 
-        //                     `Going` : 
-        //                     `Interested`;
-
         const isGoingClassName = (this.state.isGoing)?
                                     `${styles.f1_container} ${styles.isGoing}`:
                                     `${styles.f1_container}`;

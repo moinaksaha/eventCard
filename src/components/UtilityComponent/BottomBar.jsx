@@ -6,13 +6,7 @@ import styles from './BottomBar.css';
 
 export default class BottomBar extends Component{
 
-	constructor(){
-    	super();
-	}
-
 	render = () => {
-
-		// const { message } = this.props;
 
 		return (
 
@@ -38,8 +32,4 @@ export default class BottomBar extends Component{
 
 	}
 	
-};
-
-BottomBar.defaultProps = {
-
 };

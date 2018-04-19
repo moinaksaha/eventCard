@@ -6,13 +6,9 @@ import styles from './CardHeading.css';
 
 export default class CardHeading extends Component{
 
-	constructor(){
-    	super();
-	}
-
 	render = () => {
 
-		const { cardData, position, forCardDetail } = this.props;
+		const { cardData, forCardDetail } = this.props;
 
 		const cardHeadingClassName = (forCardDetail === true) ? 
 									`${styles.cardHeading}`:

@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { Glyphicon } from 'react-bootstrap';
 
 import styles from './BackButton.css';
 
 export default class BackButton extends Component{
-
-	constructor(){
-    	super();
-	}
 
 	render = () => {
 
@@ -35,5 +32,5 @@ export default class BackButton extends Component{
 };
 
 BackButton.defaultProps = {
-
+	text: PropTypes.string
 };

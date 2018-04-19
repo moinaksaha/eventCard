@@ -59,8 +59,6 @@ export default class Home extends Component {
 
   render() {
 
-    const currentCardData = this.state.allCardData[this.state.currentCardIndex];
-
     return (
 
       <Row className={`${styles.mainWrapper}`}>

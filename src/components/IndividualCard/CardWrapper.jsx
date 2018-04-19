@@ -1,36 +1,28 @@
 import React, { Component } from 'react';
-
-import debounce from 'lodash.debounce'
+import PropTypes from 'prop-types';
 
 import Swipeable from 'react-swipeable';
 
 import { CSSTransitionGroup } from 'react-transition-group'
 
-import styles from './CardWrapper.css';
-
+// Card sections
 import CardImage from '../CardComponent/CardImage'
-
 import CardHeading from '../CardComponent/CardHeading'
 
-import CardBottomPart from '../CardComponent/CardBottomPart'
-
-// const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
-// import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+// Styles import
+import styles from './CardWrapper.css';
 
 export default class CardWrapper extends Component{
 
 	constructor(){
         super();
         this.state = {
-            displayData: [],
-            // allCardData: [],
-            // currentSwipeDirection: "left"
+            displayData: []
         }
     }
 
     componentDidMount = () => {
         const { allCardData, currentCardIndex } = this.props;
-        // console.log("duh", allCardData, currentCardIndex)
         this.setState({
             displayData: allCardData.slice(currentCardIndex)
         })
@@ -48,22 +40,11 @@ export default class CardWrapper extends Component{
         }))
     }
 
-    // changeCurrentSwipeDirection = (direction) => {
-    //     if(direction && (direction!== this.state.currentSwipeDirection )){
-    //         this.setState((prevState) => ({
-    //             currentSwipeDirection: direction
-    //         }))
-    //     }
-    // }
-
     swiped = (e, deltaX, deltaY, isFlick, velocity) => {
-        // console.log("You Swiped...", e, deltaX, deltaY, isFlick, velocity);
         if(deltaX > 0){
-            // this.changeCurrentSwipeDirection("right");
             const { nextCard } = this.props;
             nextCard();
         }else{
-            // this.changeCurrentSwipeDirection("left");
             const { prevCard } = this.props;
             prevCard();
         }
@@ -71,7 +52,11 @@ export default class CardWrapper extends Component{
 
 	render = () => {
 
-        const { allCardData, toggleCardState, currentCardState, currentCardIndex, swipeDirection } = this.props;
+        const { allCardData, 
+                toggleCardState, 
+                currentCardState, 
+                currentCardIndex, 
+                swipeDirection } = this.props;
 
         const currentCardData = allCardData.slice(currentCardIndex, currentCardIndex+1);
 
@@ -97,7 +82,7 @@ export default class CardWrapper extends Component{
 
             return (
 
-                <div className={``}>
+                <div>
 
                     {/* CARD HEADING */}
 
@@ -131,9 +116,7 @@ export default class CardWrapper extends Component{
                                                 enter: `${styles.enter}`,
                                                 enterActive: `${styles.enterActive}`,
                                                 leave: `${styles.leave}`,
-                                                leaveActive: `${styles.leaveActive}`,
-                                                appear: `${styles.appear}`,
-                                                appearActive: `${styles.appearActive}`
+                                                leaveActive: `${styles.leaveActive}`
                                             } }
                                             transitionEnterTimeout={500}
                                             transitionLeaveTimeout={300}>
@@ -168,12 +151,14 @@ export default class CardWrapper extends Component{
 
         }
 
-		
-
 	}
 	
 };
 
 CardWrapper.defaultProps = {
-
+    swipeDirection: PropTypes.string,
+    allCardData: PropTypes.array, 
+    toggleCardState: PropTypes.func, 
+    currentCardState: PropTypes.string,
+    currentCardIndex:PropTypes.number
 };
