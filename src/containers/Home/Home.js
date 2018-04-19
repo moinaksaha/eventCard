@@ -13,11 +13,13 @@ import React, { Component } from 'react';
 
 import { Row, Col, Glyphicon } from 'react-bootstrap';
 
+// Assumed an array of object as the sample data for the cards
 import sampleData from './SampleData'
 
 // Import style from Home.css file
 import styles from './Home.css';
 
+// Importing the other components for the page
 import CardWrapper from '../../components/IndividualCard/CardWrapper';
 import CardBottomPart from '../../components/CardComponent/CardBottomPart'
 
@@ -58,8 +60,6 @@ export default class Home extends Component {
   render() {
 
     const currentCardData = this.state.allCardData[this.state.currentCardIndex];
-
-    // console.log(currentCardData)
 
     return (
 
@@ -116,6 +116,6 @@ export default class Home extends Component {
 
 }
 
-Home.propTypes = {
+// Home.propTypes = {
 
-};
+// };

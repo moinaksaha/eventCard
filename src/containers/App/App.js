@@ -6,6 +6,7 @@
 */
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 // React-Bootstrap imports
 import { Grid } from 'react-bootstrap';
@@ -14,12 +15,12 @@ import { Grid } from 'react-bootstrap';
 import styles from './App.css';
 
 export default class App extends Component {
-  constructor(props) {
-    /**
-     * This is for illustration purpose. Since this is empty. It can be removed
-    */
-    super(props);
-  }
+  // constructor(props) {
+  //   /**
+  //    * This is for illustration purpose. Since this is empty. It can be removed
+  //   */
+  //   super(props);
+  // }
 
   render() {
     
@@ -40,5 +41,5 @@ export default class App extends Component {
 }
 
 App.propTypes = {
-  
+  children: PropTypes.any.isRequired
 };
