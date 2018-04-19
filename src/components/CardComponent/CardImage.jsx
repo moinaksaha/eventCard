@@ -24,7 +24,7 @@ export default class CardImage extends Component{
 			marginTop: 20*position + 'px',
 			zIndex: 999-position,
 			opacity: 1 - (0.2*position),
-			width: `calc(80vw - ${40*position}px)`,
+			width: `calc(80% - ${40*position}px)`,
 			height: `calc(100% - ${40*position}px)`
 		};
 

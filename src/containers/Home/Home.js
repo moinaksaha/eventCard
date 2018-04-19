@@ -25,6 +25,7 @@ import CardBottomPart from '../../components/CardComponent/CardBottomPart'
 
 import BackButton from '../../components/UtilityComponent/BackButton';
 import BottomBar from '../../components/UtilityComponent/BottomBar';
+import FlashMessage from '../../components/UtilityComponent/FlashMessage';
 
 export default class Home extends Component {
   constructor(props) {
@@ -33,22 +34,48 @@ export default class Home extends Component {
       currentCardIndex: 0,
       allCardData: sampleData.data,
       currentCardState: "carousel", // "cardDetail"
-      currentSwipeDirection: "left"
+      currentSwipeDirection: "left",
+      showGalleryEndMessage: false
     }
   }
 
+  showFlashMessage = () => {
+    this.setState({
+      showGalleryEndMessage: true
+    })
+    setTimeout(() => {
+      this.setState({
+        showGalleryEndMessage: false
+      })
+    }, 2000)
+  }
+
   prevCard = () => {
-    this.setState((prevState) => ({
-      currentSwipeDirection: "right",
-      currentCardIndex: (prevState.currentCardIndex>0)? prevState.currentCardIndex - 1 : 0
-    }))
+    console.log("currentCardIndex", this.state.currentCardIndex);
+    console.log("allCardData.length", this.state.allCardData.length);
+    console.log("====================================")
+    if(this.state.currentCardIndex > 0){
+      this.setState((prevState) => ({
+        currentSwipeDirection: "right",
+        currentCardIndex: prevState.currentCardIndex - 1
+      }))
+    }else{
+      this.showFlashMessage();
+    }
   }
 
   nextCard = () => {
-    this.setState((prevState, props) => ({
-      currentSwipeDirection: "left",
-      currentCardIndex: (prevState.currentCardIndex<prevState.allCardData.length-1) ? prevState.currentCardIndex + 1 : prevState.currentCardIndex
-    }));
+    console.log("currentCardIndex", this.state.currentCardIndex);
+    console.log("allCardData.length", this.state.allCardData.length);
+    console.log("====================================")
+    if(this.state.currentCardIndex < this.state.allCardData.length-1){
+      this.setState((prevState, props) => ({
+        currentSwipeDirection: "left",
+        currentCardIndex: prevState.currentCardIndex + 1
+      }));
+    }else{
+      this.showFlashMessage();
+    }
   }
 
   toggleCardState = () => {
@@ -86,12 +113,22 @@ export default class Home extends Component {
                         currentCardState={this.state.currentCardState}
                         toggleCardState={this.toggleCardState}/>
 
-        <Col xs={12} className={`${styles.navigationTest}`}>
+        <Col xs={12} className={`${styles.navigationTest} text-center`}>
 
           <div className={`pull-left ${styles.prev}`}
                onClick={this.prevCard}> 
             <Glyphicon glyph="chevron-left"/>
           </div>
+
+          {this.state.showGalleryEndMessage && 
+
+            <div className={`${styles.flashMessageHolder}`}>
+              
+              <FlashMessage text={`You've reached the end!`} />
+
+            </div>
+
+          }
 
           <div className={`pull-right ${styles.next}`}
                onClick={this.nextCard}> 
