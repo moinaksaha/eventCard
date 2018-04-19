@@ -8,6 +8,7 @@ clone from this repository
 
 cd eventCard
 npm install
-npm start
+npm start  //starts the project in dev mode
+npm run build // created a production build in /build folder
 
 ```
