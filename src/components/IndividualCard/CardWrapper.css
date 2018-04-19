@@ -13,8 +13,8 @@
 /* IMAGE CAROUSEL CSS */
 .enter {
     opacity: 0;
-    transform:   translate(-100px,0);
-    transform: translate3d(-100px,0,0);
+    transform:   translate(calc(50px - 80vw),0);
+    transform: translate3d(calc(50px - 80vw),0,0);
 }
   
 .enterActive {
@@ -37,8 +37,8 @@
 
 .leaveActive {
     opacity: 0;
-	transform:   translate(-100px,0);
-	transform: translate3d(-100px,0,0);
+	transform:   translate(calc(50px - 80vw),0);
+	transform: translate3d(calc(50px - 80vw),0,0);
 }
 
 /* HEADING PART CSS */

@@ -4,10 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 How to Run:
 ```
 clone from this repository
-    - git@github.com:moinaksaha/progressive-form.git
+    - git@github.com:moinaksaha/eventCard.git
 
-cd progressive-form
-yarn install
-yarn start
+cd eventCard
+npm install
+npm start
 
 ```
